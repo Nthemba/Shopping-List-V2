@@ -2,7 +2,8 @@
 S'failed'
 p2
 (lp3
-sS'source_names'
+S'5'
+asS'source_names'
 p4
 (lp5
 S'tests'
@@ -40,4 +41,15 @@ sI4
 S'test_users'
 S'Testusers.test_passwords_match'
 tp17
+sI5
+(S'/home/kosgei/Desktop/shoppinglist/tests/test_users.py'
+S'test_users'
+p18
+S'Testusers.test_user_login'
+tp19
+sI6
+(S'/home/kosgei/Desktop/shoppinglist/tests/test_users.py'
+g18
+S'Testusers.test_user_not_registered'
+tp20
 ss.

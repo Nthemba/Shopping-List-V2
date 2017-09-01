@@ -49,4 +49,4 @@ class User(object):
         for ins_user in self.user_list:
             if username == ins_user['username'] and password == ins_user['password']:
                 return "Welcome! Create a new shopping list"
-        return "account does not exist.Sign up"
+        return "Account does not exist.Sign up"

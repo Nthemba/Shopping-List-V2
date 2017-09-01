@@ -62,3 +62,27 @@ class Testusers(unittest.TestCase):
         self.user.createuser("junenthemba@gmail.com", "njune", "qwerty", "qwerty")
         res = self.user.createuser("liamkosgei@gmail.com", "lune", "qwerty", "qwerty1")
         self.assertEqual(res, "Passwords do not match")
+
+    def test_user_login(self):
+        """
+        Tests if user is registered and can log in
+        Args
+            username,password
+        pass criteria
+            test passes if assertEqual is true
+        """
+        self.user.createuser("junenthemba@gmail.com", "njune", "qwerty", "qwerty")
+        res = self.user.login("njune", "qwerty")
+        self.assertEqual(res, "Welcome! Create a new shopping list")
+
+    def test_user_not_registered(self):
+        """
+        Test if user trys to login with no account created
+        Args
+            username,password
+        pass criteria
+            test passes if assertEqual is true
+        """
+        self.user.createuser("junenthemba@gmail.com", "njune", "qwerty", "qwerty")
+        res = self.user.login("jben", "1234")
+        self.assertEqual(res, "Account does not exist.Sign up")
