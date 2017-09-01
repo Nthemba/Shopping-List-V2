@@ -4,8 +4,9 @@
         <title>My Shopping list</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.css') }}" />
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+        <link rel="stylesheet" href="assets/plugins/bootstrap/bootstrap.css" type="text/css">
+
     </head>
     <body class="body-Login-background">
         <div class="navbar navbar-default" style="padding-top: 50px">
@@ -22,15 +23,14 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="username" name="username" id="username" type="text" value="" autofocus>
+                                <input class="form-control" placeholder="username" name="username" type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" id="password" type="password" value="">
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
                             </div>
-                            <!-- <input type="submit" id="btnsignup" class=" form-control btn btn-lg btn-success btn-block" value="Login"> -->
-                            <a href="/dashboard" class="btn btn-lg btn-success btn-block">Login</a>
-                            <div class="form-group">
-                                <h5>Don't have an account yet?</h5><a href="/signup">SIGN UP</a>
+                            <a href="dashboard.html" class="btn btn-lg btn-success btn-block">Login</a>
+                            <div>
+                                <h5>Don't have an account yet?</h5><a href="url">SIGN UP</a>
                             </div>
                             <div class="text-center">
                                 <a href="url">Forgot password?</a>
