@@ -1,12 +1,16 @@
 """
-Initializes application
+__init.py
 """
 from flask import Flask
+from app import users
+
 
 # Initialize the app
 app = Flask(__name__, instance_relative_config=True)
 # secret key for Session
 app.secret_key = '\xacd\xf3\xe3\xb7\x06>\x86\x1d\x0b\x9c/\xfc)\xbd\xc57\x14\x80\xbc\xc2\x1d\x97h'
+
+user_obj = users.User()
 
 # Load the views
 from app import views

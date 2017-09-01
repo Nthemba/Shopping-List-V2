@@ -21,7 +21,7 @@ class User(object):
             user_dict['email'] = email
             user_dict['username'] = username
             user_dict['password'] = password
-            print self.user_list.append(user_dict)
+            self.user_list.append(user_dict)
             return "Registration successful"
         else:
             for ins_user in self.user_list:

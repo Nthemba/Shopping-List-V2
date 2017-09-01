@@ -4,8 +4,7 @@ views.py
 
 from flask import render_template, request, session
 
-from app import app, users
-user = users.User()
+from app import app, user_obj
 
 @app.route('/', methods=['GET', 'POST'])
 def signup():
@@ -18,11 +17,10 @@ def signup():
         password = request.form['password']
         cpassword = request.form['cpassword']
 
-        txt = user.createuser(email, username, password, cpassword)
+        txt = user_obj.createuser(email, username, password, cpassword)
         if txt == "Registration successful":
             return render_template("index.html", resp=txt)
-        else:
-            return render_template("signup.html", resp=txt)
+        return render_template("signup.html", resp=txt)
 
     return render_template("signup.html")
 
@@ -34,13 +32,12 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        txt = user.login(username, password)
+        txt = user_obj.login(username, password)
         if txt == "Welcome! Create a new shopping list":
             if username in session:
                 return render_template("dashboard.html")
-            else:
-                session['username'] = username
-                return render_template("dashboard.html")
+            session['username'] = username
+            return render_template("dashboard.html")
         elif txt == "Account does not exist.Sign up":
             return render_template("signup.html")
     return render_template("index.html")
